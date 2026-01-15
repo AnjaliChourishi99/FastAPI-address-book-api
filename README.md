@@ -18,46 +18,38 @@ The API supports full CRUD operations.
 ## Project Structure
 
 ```
-address_book_repo/
+address_book_application/
 ├── app/
 │   ├── __init__.py          # Package initialization
-│   ├── main.py               # FastAPI application entry point
-│   ├── database.py           # Database configuration & session
-│   ├── models.py             # SQLAlchemy ORM models
-│   ├── schemas.py            # Pydantic validation schemas
-│   ├── crud.py               # Database CRUD operations
-│   ├── routers/
-│   │   ├── __init__.py
-│   │   └── addresses.py      # Address API endpoints
-├── requirements.txt          # Python dependencies
-├── README.md                 # This file
+│   ├── main.py              # FastAPI application entry point
+│   ├── database.py          # Database configuration & session
+│   ├── models.py            # SQLAlchemy ORM models
+│   ├── schemas.py           # Pydantic validation schemas
+│   ├── crud.py              # Database CRUD operations
+│   └── routers/
+│       ├── __init__.py
+│       └── addresses.py     # Address API endpoints
+├── requirements.txt         # Python dependencies
+├── README.md                # This file
 └── .gitignore               # Git ignore rules
 ```
 
-API available at: http://localhost:8000
-
-### Prerequisites
+## Prerequisites
 
 - Python 3.8 or higher
 - pip (Python package manager)
 
-### Step 1: Clone or Navigate to the Project
+## Setup & Installation
 
 ```bash
-cd /home/anjali/Documents/courses/fastapi/address_book_repo
-```
-
-## First Time Setup
-
-```bash
-# 1. Navigate to project
-cd address_book_application
+# 1. Clone the repository
+git clone https://github.com/YOUR_USERNAME/FastAPI-address-book-api.git
 
 # 2. Create virtual environment
 python3 -m venv venv
 
-# 3. Activate it
-source venv/bin/activate
+# 3. Activate virtual environment
+source venv/bin/activate        # Linux/macOS
 
 # 4. Install dependencies
 pip install -r requirements.txt
@@ -66,12 +58,14 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload --port 8000
 ```
 
+API available at: **http://localhost:8000**
+
 ## API Documentation
 
 Once the server is running, access the interactive documentation:
 
 | Documentation | URL |
-|--------------|-----|
+|---------------|-----|
 | Swagger UI | http://localhost:8000/docs |
 | ReDoc | http://localhost:8000/redoc |
 
@@ -133,3 +127,4 @@ curl "http://localhost:8000/addresses/search/nearby?latitude=22.7196&longitude=7
 | Uvicorn | ASGI server |
 | SQLAlchemy | Database ORM |
 | Pydantic | Data validation |
+
